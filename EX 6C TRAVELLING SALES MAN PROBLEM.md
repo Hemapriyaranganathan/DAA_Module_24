@@ -46,7 +46,8 @@ def travellingSalesmanProblem(graph, s):
     ```
 
 ## Output:
-![image](https://github.com/user-attachments/assets/0f2e92f3-78ec-4428-991a-5499f911dd92)
+![Screenshot 2025-04-29 154615](https://github.com/user-attachments/assets/bd8d3101-9812-444a-abd6-4cf5648fc7d1)
+
 
 
 
