@@ -28,17 +28,12 @@ When passing through a path cell containing a cherry, you pick it up, and the ce
 
 5.For the last column, move from bottom to top. Each cell collects cherries from the current grid cell and the cell below.
 
-6.For all other cells:For each cell (i, j), the number of cherries is the current grid value plus the maximum of the possible moves (either move right or move down).
-
-7.The top-left corner dp[0][0] will store the maximum number of cherries that can be collected.
-
-8.Return the result, but add 1 (since the problem specifies counting the starting position's cherries too).  
 
 
 ## Program :
 
-### Developed by: Abrin Nisha A 
-### Register Number: 212222230005
+### Developed by: Hemapriya R
+### Register Number: 212222040055
 
 ```
 class Solution:
