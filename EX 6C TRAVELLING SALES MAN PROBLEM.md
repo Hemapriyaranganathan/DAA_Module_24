@@ -1,56 +1,42 @@
 # EX 6C TRAVELLING SALES MAN PROBLEM
-## DATE:
-## AIM:
-To Solve Travelling Sales man Problem for the following graph.
 
-## Algorithm
-1. List vertices: Exclude the start vertex and create a list of other vertices.
-2. Generate all routes: Find all possible ways to visit the vertices.
-3. Calculate path cost: For each route, calculate the total travel cost (including returning to the start).
-4. Track minimum cost: Keep track of the lowest cost found.
-5. Return result: Return the minimum cost after checking all routes.  
+## DATE :
 
-## Program:
+## AIM :
+
+To Solve the given 2D matrix tsp[][], where each row has the array of distances from that indexed city to all the other cities and -1 denotes that there doesn’t exist a path between those two indexed cities. The task is to print minimum cost in TSP cycle.
+
+## Algorithm :
+
+1.Take the cost matrix that shows the cost between every pair of cities.
+
+2.Generate all possible orders (permutations) in which the cities can be visited.
+
+3.For each order, calculate the total travel cost, including returning to the starting city.
+
+4.Keep track of the minimum total cost found so far.
+
+5.After checking all possible orders, return the minimum cost as the final answer.
+
+## Program :
+
+### Developed by: Hemapriya R
+### Register Number:  212222040055
+
 ```
-/*
-Developed by: Hemapriya R  
-Register Number: 212222040055  
-*/
-```
-```
-from sys import maxsize
+def tsp_cost(tsp):
+    return min(sum(tsp[i][j] for i, j in zip(path, path[1:] + path[:1])) for path in permutations(range(len(tsp))))
+
 from itertools import permutations
-V = 4
-def travellingSalesmanProblem(graph, s):
-    vertex = []
-    for i in range(V):
-        if i != s:
-            vertex.append(i)
-    min_path = maxsize
-    next_permutation=permutations(vertex)
-    
-    for i in next_permutation:
-        current_pathweight = 0
-        k = s
-        for j in i:
-            current_pathweight += graph[k][j]
-            k = j
-        current_pathweight += graph[k][s]
-        min_path = min(min_path, current_pathweight)
-        return min_path
-  if __name__ == "__main__":
-    graph = [[0, 10, 15, 20], [10, 0, 35, 25],
-        [15, 35, 0, 30], [20, 25, 30, 0]]
-    s=0
-    print(travellingSalesmanProblem(graph, s))
-    ```
+tsp = [[-1, 30, 25, 10], [15, -1, 20, 40], [10, 20, -1, 25], [30, 10, 20, -1]]
+print("Minimum Cost is :",tsp_cost(tsp))
+```
 
-## Output:
-![Screenshot 2025-04-29 154615](https://github.com/user-attachments/assets/bd8d3101-9812-444a-abd6-4cf5648fc7d1)
+## Output :
+
+![image](https://github.com/user-attachments/assets/ecf9c7a0-3e7b-445b-96cd-5a069c62bebc)
 
 
+## Result :
 
-
-
-## Result:
 Thus the program was executed successfully for finding the minimum cost to vist all cities.
